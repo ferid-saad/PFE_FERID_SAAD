@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application auth</string>
+    <string name="forget_password"><u>Forget Password</u></string>
+    <string name="register_here"><u>Don\'t have an account? register here</u></string>
+    
+
+</resources>
