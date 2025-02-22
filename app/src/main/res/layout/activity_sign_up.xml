@@ -5,9 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SinUpActivity">
+    tools:context=".SignUpActivity">
 
     <LinearLayout
+        android:layout_marginTop="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -22,7 +23,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin=""
+                android:layout_margin="10sp"
                 android:text="Welcome \nPlease sign up here"
                 android:textColor="@color/color_app"
                 android:textSize="20sp"
@@ -33,7 +34,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="30sp"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/logo" />
         </RelativeLayout>
 
         <LinearLayout
@@ -47,6 +48,7 @@
 
 
             <EditText
+                android:id="@+id/user_name_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -55,9 +57,10 @@
                 android:drawableTint="@color/color_app"
                 android:hint="User Name"
                 android:inputType="textPersonName"
-                android:textSize="14sp">
+                android:textSize="14sp" />
 
             <EditText
+                android:id="@+id/email_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -66,9 +69,10 @@
                 android:drawableTint="@color/color_app"
                 android:hint="exemple@gmail.com"
                 android:inputType="textEmailAddress"
-                android:textSize="14sp">
+                android:textSize="14sp" />
 
             <EditText
+                android:id="@+id/cin_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -77,9 +81,10 @@
                 android:drawableTint="@color/color_app"
                 android:hint="CIN:"
                 android:inputType="text"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <EditText
+                android:id="@+id/phone_number_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -88,10 +93,11 @@
                 android:drawableTint="@color/color_app"
                 android:hint="Phone Number"
                 android:inputType="text"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
 
             <EditText
+                android:id="@+id/password_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -104,6 +110,7 @@
 
 
             <EditText
+                android:id="@+id/confirm_password_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -116,6 +123,7 @@
 
 
             <Button
+                android:id="@+id/btn_sign_up"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -125,7 +133,7 @@
 
 
             <TextView
-                android:id="@+id/go_to_sign_up"
+                android:id="@+id/go_to_sign_in"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -138,10 +146,4 @@
 
         </LinearLayout>
     </LinearLayout>
-
-
-
-
-
-
 </ScrollView>

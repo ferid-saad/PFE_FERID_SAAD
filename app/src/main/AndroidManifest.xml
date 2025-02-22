@@ -16,7 +16,7 @@
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".SinUpActivity"
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".SignInActivity"
