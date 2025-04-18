@@ -88,7 +88,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_valve1"
+                android:id="@+id/btn_valve1_marche"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -97,7 +97,7 @@
                 android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/btn_valve2"
+                android:id="@+id/btn_valve1_stop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/color_app"
@@ -119,7 +119,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_valve1"
+                android:id="@+id/btn_valve2_marche"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -129,7 +129,7 @@
                 tools:ignore="DuplicateIds" />
 
             <Button
-                android:id="@+id/btn_valve2"
+                android:id="@+id/btn_valve2_stop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/color_app"
