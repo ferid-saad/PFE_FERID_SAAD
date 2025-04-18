@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFeridActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Titre -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tableau de Bord - Motopompe"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp"
+        android:textColor="@color/color_app" />
+
+    <!-- Commande Motopompe -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/shape"
+        android:orientation="vertical"
+        android:padding="25sp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Commande Motopompe :"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_start_pump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marche"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/color_app"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btn_stop_pump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arrêt"
+                android:backgroundTint="@color/color_app"
+                android:textColor="#FFFFFF"
+                android:layout_margin="8dp"/>
+        </LinearLayout>
+
+        <!-- Électrovannes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contrôle des Électrovannes :"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Électrovanne 1:"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_valve1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/color_app"
+                android:text="Marche"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_valve2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_app"
+                android:text="Arrêt"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Électrovanne 2:"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_valve1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/color_app"
+                android:text="Marche"
+                android:textColor="#FFFFFF"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/btn_valve2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_app"
+                android:text="Arrêt"
+                android:textColor="#FFFFFF"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+        <!-- Température et Humidité -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Données Environnementales :"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp" />
+
+        <EditText
+            android:id="@+id/input_temperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Température (°C)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/input_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Humidité (%)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+        <EditText
+            android:id="@+id/input_soil_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Humidité de sol (%)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</LinearLayout>
+
+</ScrollView>
