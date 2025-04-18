@@ -1,13 +1,21 @@
 package com.example.myapplicationauth;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplicationauth.models.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,6 +27,8 @@ public class SignUpActivity extends AppCompatActivity {
     private Button btnSignUP;
     private String userNameString, emailString, cinString, phoneNumberString, passwordString, confirmPasswordString;
     private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@(.+)$";
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +43,25 @@ public class SignUpActivity extends AppCompatActivity {
         password = findViewById(R.id.password_sign_up);
         confirmPassword = findViewById(R.id.confirm_password_sign_up);
         btnSignUP = findViewById(R.id.btn_sign_up);
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
 
         //actions
         btnSignUP.setOnClickListener(v -> {
             if (validate()) {
-                Toast.makeText(this, "Valid", Toast.LENGTH_SHORT).show();
+                progressDialog.setMessage("Please wait...");
+                progressDialog.show();
+
+                firebaseAuth.createUserWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+
+                        sendEmailVerification();
+                    } else {
+                        Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }
+                });
+
             }
         });
         goToSignIn.setOnClickListener(v -> {
@@ -46,6 +69,33 @@ public class SignUpActivity extends AppCompatActivity {
             startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
         });
 
+    }
+
+    //declaration des méthodes
+    private void sendEmailVerification() {
+        FirebaseUser loggedUser = firebaseAuth.getCurrentUser();
+        if (loggedUser != null) {
+            loggedUser.sendEmailVerification().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    sendUserData();
+                    Toast.makeText(this, "Registration done please check your email", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(this, SignInActivity.class));
+                    progressDialog.dismiss();
+                    finish();
+                } else {
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+
+                }
+            });
+        }
+    }
+
+    private void sendUserData() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference("users");
+        User user = new User(userNameString, emailString, cinString, phoneNumberString);
+        databaseReference.child("" + firebaseAuth.getUid()).setValue(user);
     }
 
     private boolean validate() {
@@ -75,9 +125,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-    //declaration des méthodes
     private boolean isValidEmail(String email) {
         Pattern pattern = Pattern.compile(EMAIL_REGEX);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
-    }}
+    }
+}
