@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">My Application auth</string>
-    <string name="forget_password"><u>Forget Password</u></string>
+    <string name="forgot_password"><u>Forgot Password</u></string>
     <string name="register_here"><u>Don\'t have an account? register here</u></string>
     <string name="have_auccount"><u>Already Have An Auccount</u></string>
-
+    <string name="green_smart_application_n_saad_ferid">Green Smart Application \n Saad Ferid</string>
 
 </resources>

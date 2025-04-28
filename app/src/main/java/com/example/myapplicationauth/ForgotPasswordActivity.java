@@ -6,14 +6,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ResetPasswordActivity extends AppCompatActivity {
+public class ForgotPasswordActivity extends AppCompatActivity {
 //declaration des variables
     private Button BackToSignIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_reset_password);
+        setContentView(R.layout.activity_forgot_password);
         //affectation des variables
         BackToSignIn = findViewById(R.id.back_to_sign_in);
 

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "371026529342",
-    "project_id": "auth-eacfb",
-    "storage_bucket": "auth-eacfb.firebasestorage.app"
+    "project_number": "174963190357",
+    "project_id": "pfe-ferid-saad",
+    "storage_bucket": "pfe-ferid-saad.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:371026529342:android:3f0bebe1cb94295853956f",
+        "mobilesdk_app_id": "1:174963190357:android:a2984f45b2aba0a0c202dc",
         "android_client_info": {
           "package_name": "com.example.myapplicationauth"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB-6v_gOvdyDm_7_CvO-1mh-4egvM8keXY"
+          "current_key": "AIzaSyBhSTXxSdU1RcBSb9EI8pZH67tGAcJ3B0I"
         }
       ],
       "services": {

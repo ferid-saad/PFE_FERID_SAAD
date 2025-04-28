@@ -18,7 +18,7 @@
             android:name=".DashboardFeridActivity"
             android:exported="false" />
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
